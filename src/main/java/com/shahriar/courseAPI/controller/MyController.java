@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 public class MyController {
@@ -19,7 +20,7 @@ public class MyController {
         return this.courseService.getAllCourses();
     }
     @GetMapping("/course/{id}")
-    public Course getCourse(@PathVariable Long id) {
+    public Optional<Course> getCourse(@PathVariable Long id) {
         return this.courseService.getCourse(id);
     }
 
